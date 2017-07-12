@@ -1,0 +1,1 @@
+export parseVariables from './parseVariables';

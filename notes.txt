@@ -1,0 +1,4 @@
+apollo graphql pokedex endpoint for my personal github account:
+
+	https://api.graph.cool/simple/v1/cj4ympqygonri0196m2bnt7gz
+
