@@ -1,48 +1,31 @@
-# React-Apollo
-based on: Starter Kit for [Building Applications in React and Redux in ES6](http://www.pluralsight.com/author/cory-house) on Pluralsight. with updated react router using react-router-dom
+# react apollo pokedex
+based on react apollo tutorial
 
-## pluralsight Starter Kit
-https://github.com/coryhouse/pluralsight-redux-starter.git` or [download the zip](https://github.com/coryhouse/pluralsight-redux-starter/archive/master.zip)
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-1. **Install Node Packages.** - `npm install`
-2. **Run the app.** - `npm start -s`
-This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching files all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
-6. **Install [React developer tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en) and [Redux Dev Tools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)** in Chrome.
+## Start it up:
+* yarn install
+* yarn start
 
-## Apollo Basics
-getting the data for us:
-With Apollo, we need to denote queries like this by using the gql tag contained in the graphql-tag package.
+## pokedex:
+interacts with a graphql server.
+
+## apollo
+encapsulates all graphql data interactions for the components.
+this projects demonstrate the small footprint of apollo:
+* index.js declaring apollo client and directing it to the graphql service endpoint.
+* index.js wrapping data enabled root components with ApolloProvider.
+* Pokedex component data powered by apollo with Trainer query and query parameter.
+
+## react router
+maps routes to components
+
+## css
+using 
+* styled-components: pushing css into components in js. programatically adding styles in a component specific way.
+* Tachyons: css system that we can just import in the index.js and use anywhere without writing any css.(example: className="tc pa5")
 <pre>
-const TrainerQuery = gql`
-  query TrainerQuery {
-    Trainer(name: "tal.benavraham@gmail.com") {
-      name
-    }
-  }
-`
+  //index.js
+  import 'tachyons';
 </pre>
-injecting a data prop to the component:
-<pre>
-const PokedexWithData = graphql(TrainerQuery)(Pokedex)
-</pre>
-result: data prop will look like this:
-<pre>
-static propTypes = {
-  data: React.PropTypes.shape({
-    loading: React.PropTypes.bool,
-    error: React.PropTypes.object,
-    Trainer: React.PropTypes.object,
-  }).isRequired,
-}
-</pre>
-Trainer is returned when we run the query in graphiql:
-<pre>
-{
-  "data": {
-    "Trainer": {      
-      "id": "cj4ympu2wmdep0110j7iolzyc",
-      "name": "tal.benavraham@gmail.com"
-    }
-  }
-}
-</pre>
+

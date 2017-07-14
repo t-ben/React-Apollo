@@ -60,7 +60,7 @@ const TrainerQuery = gql(`
     }
   }
 `);
-//let apollo inject its stuff using out query:
+//let apollo inject its stuff (data) using out query:
 const PokedexWithData = graphql(TrainerQuery, {
   options: {
     variables: { //send the query parameter/s here:
