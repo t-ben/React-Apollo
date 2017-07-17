@@ -36,7 +36,7 @@ class Pokedex extends React.Component {
         <Title className="tc pa5">
           Hey {this.props.data.Trainer.name}, there are {this.props.data.Trainer.ownedPokemons.length} Pokemons in your pokedex
         </Title>
-        <div>
+        <div className='flex flex-wrap justify-center center w-75'>
           {this.props.data.Trainer.ownedPokemons.map(pokemon => {            
             //return (<p key={pokemon.id}>{pokemon.name}</p>);
             return (<PokemonPreview key={pokemon.id} pokemon={pokemon}></PokemonPreview>);

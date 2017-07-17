@@ -15,11 +15,14 @@ export default class PokemonPreview extends React.Component {
 
   render () {
     return (
-      <div className="dib mw4 tc black link dim ml1 mr1 mb2 bg-white pa2">
+      <div className="dib mw4 tc black link dim ml1 mr1 mb2 bg-white pa2" 
+        style={{borderStyle: 'solid', 
+            borderWidth: 'medium',
+            borderColor: 'lightgray'}} >
         <div className="db">
           <Img src={this.props.pokemon.url} alt={this.props.pokemon.name} />
         </div>
-        <span className="gray">{this.props.pokemon.name}</span>
+        <span className="gray tc">{this.props.pokemon.name}</span>
       </div>
     )
   }
